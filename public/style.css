@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+/* global */
+
+*{
+    /* corrigindo comportamento padrão css */
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+h1, h2{
+    color: rgb(32, 32, 32);
+}
+/* titulos */
+header h1, main h2{
+    margin-bottom: 70px;
+}
+
+main h2 span{
+    color: #ff4f4f;
+}
+.form h2{
+    text-align: right;
+    color: rgba(255, 255, 255,0.9);
+    font-size: 18px;
+}
+/* alinhamentos */
+header, main, footer{
+    /* alinhamento de textos */
+    text-align: center;
+}
+
+header, .form, main {
+    /* espaçamentos com margin */
+    margin: 0 auto 70px auto;
+
+    /* limites dos elementos das páginas */
+    width: 90%;
+    max-width: 500px;
+}
+/*HEADER*/
+header button{
+    margin-top: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #ff4f4f;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+img.logo{
+    width: 150px;
+    margin: 70px 0;
+}
+header p{
+    font-size: 14px;
+}
+/*FORM*/
+section.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-gap: 45px;
+
+    background-color: #ff4f4f;
+
+    padding: 10px 64px;
+    border-radius: 8px;
+
+    align-items: center;
+}
+
+form input, form button{
+    width: 100%;
+
+    /* espaçamentos  */
+    margin-bottom: 5px;
+
+    /*preenchimento*/
+    padding: 8px 16px;
+
+    /*bordas*/
+    border-radius: 10px;
+    border: 1px solid rgb(228, 228, 228);
+
+    
+    
+}
+form input{
+    background-color: transparent;
+    color: white;
+}
+form input::placeholder{
+    color: #ffffffaa;
+}
+form button{
+    font-weight: bold;
+    background-color: white;
+}
+
+/*MAIN*/
+main .donors{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+main div.blood{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff4f4f;
+    font-weight: bold;
+    position: relative;
+}
+main div.blood::before{
+    content: "";
+    background-color: #2c2c2c11;
+
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    
+    /*Fazer a gotinha*/
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    
+    transform: rotate(-45deg);
+}
+div.donor p{
+    margin: 24px 0 64px;
+    font-size: 14px;
+}
+/*FOOTER*/
+footer{
+    margin-top: auto;
+    padding: 16px;
+    border-top: 1px solid gray;
+}
+
+/*funcionalidades com javascript*/
+section.form{
+    transition: all 0.5s;
+}
+section.form.hide{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: -70px;
+}
